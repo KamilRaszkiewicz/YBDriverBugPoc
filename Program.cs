@@ -113,7 +113,7 @@ namespace YBDriverBugPoc
 
         static async Task Main(string[] args)
         {
-            var dataSource = NpgsqlDataSource.Create("Host=x.x.x.x,y.y.y.y,z.z.z.z;Port=5432;Username=postgres;Password=postgres;Database=tidemms;Load Balance Hosts=true;");
+            var dataSource = NpgsqlDataSource.Create("Host=x.x.x.x,y.y.y.y,z.z.z.z;Port=5432;Username=postgres;Password=postgres;Database=mydatabase;Load Balance Hosts=true;");
 
             var tasks = Enumerable.Range(0, 10).Select( async (x) => await ExecuteForIDAsync(x, dataSource)).ToList();
 
